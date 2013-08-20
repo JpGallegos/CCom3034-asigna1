@@ -14,9 +14,9 @@ int main() {
     // L.sum().print(); 
  
  
-    // L.sortAscending();
-    // cout << "Contenido de L, luego de ordenado" << endl;
-    // L.print();
+    L.sortAscending();
+    cout << "Contenido de L, luego de ordenado:" << endl;
+    L.print();
     
     return 0;
 }

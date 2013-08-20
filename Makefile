@@ -1,7 +1,6 @@
-
 fracarray: bin/ src/fracArray.o src/frac.o src/fracArrayClient.o
-	@echo "Output file is located in bin/"
 	g++ -o bin/fracArray src/fracArray.o src/frac.o src/fracArrayClient.o
+	@echo "Output file is located in bin/"
 
 bin/:
 	@echo "Creating bin/" 
@@ -20,4 +19,5 @@ clean:
 	rm src/*.o bin/*
 
 config:
+	@echo "Use run to test"
 	alias run="bin/./fracArray"

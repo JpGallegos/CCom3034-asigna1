@@ -12,6 +12,13 @@ int gcd(int x, int y) {
 		return gcd(y, x%y);
 }
 
+int lcm(int n, int m) {
+	// For the gcd(x, y) to work, x >= y, y >= 0
+	int x = (n >= m) ? n: m;
+	int y = (n < m) ? n: m;
+
+	return (x*y)/gcd(x, y);
+} 
 
 Fraction::Fraction() {
 	num = 0;
@@ -23,10 +30,10 @@ Fraction::Fraction(int n, int d) {
 	denom = d;
 }
 
-int Fraction::fracGCD(){
+int Fraction::fracGCD()const {
 	// For the gcd(x, y) to work, x >= y, y >= 0
-	int x = (this->num >= this->denom) ? this->num: this->denom;
-	int y = (this->num < this->denom) ? this->num: this->denom;
+	int x = (num >= denom) ? num: denom;
+	int y = (num < denom) ? num: denom;
 
 	int result = gcd(x, y);
 	return result;
@@ -108,8 +115,13 @@ Fraction Fraction::div(const Fraction& F)const {
 }
 
 bool     Fraction::gt(const Fraction& F)const {
-	return (float(this->num/this->denom) > float(F.getNum()/F.getDenom()));
+	int LCM = lcm(denom, F.getDenom());
+	// cout<< "With denominators: "<< denom<< " and "<<  F.getDenom()<<'\n';
+	// cout<< "The lcm is: "<< LCM<< '\n';
+	// cout<< "Comparing: "<< (num * (LCM/denom))<< " and "<<  (F.getNum() * (LCM/F.getDenom()))<<'\n';
+	return ((num * (LCM/denom)) > (F.getNum() * (LCM/F.getDenom())));
 }
+
 void Fraction::reduce() {
 	int commonDivisor = this->fracGCD();
 	if (commonDivisor > 1) {

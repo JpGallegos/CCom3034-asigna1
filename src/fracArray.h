@@ -10,7 +10,6 @@ class ArrayOfFractions {
 		int frac_count;
 	public:
 		ArrayOfFractions();
-		~ArrayOfFractions();
 
 		int getArraySize()const;
 

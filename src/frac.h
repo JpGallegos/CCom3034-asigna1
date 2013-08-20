@@ -7,7 +7,7 @@ class Fraction {
 		Fraction();
 		Fraction(int n, int d);
 
-		int fracGCD();
+		int fracGCD()const;
 
 		void setNum(int n);
 		void setDenom(int d);

@@ -11,8 +11,10 @@ ArrayOfFractions::ArrayOfFractions() {
 	frac_count = 0;
 
 	for(int idx=0; idx<ARRAY_SIZE; idx++) {
-		A[idx] = Fraction(rand() % 30, rand() % 30 + 1);
+		A[idx] = Fraction(rand() % 15 + 1, rand() % 15 + 1);
+		// A[idx].print(); cout<<"\n";
 		A[idx].reduce();
+		// A[idx].print(); cout<< "\n ----- \n";
 		frac_count++;
 	}
 
@@ -22,7 +24,25 @@ int ArrayOfFractions::getArraySize()const {
 	return frac_count;
 }
 
-void ArrayOfFractions::sortAscending() {}
+void ArrayOfFractions::sortAscending() {
+	int minElemPos;
+	Fraction tempFrac;
+
+	for (int j=0; j<frac_count-1; j++) {
+		minElemPos = j;
+
+		for (int i=j+1; i<frac_count; i++) {
+			if ( A[minElemPos].gt(A[i]) ) {
+				minElemPos = i;
+			}
+		}
+		if (minElemPos != j) {
+			tempFrac = A[j];
+			A[j] = A[minElemPos];
+			A[minElemPos] = tempFrac; 
+		}
+	}
+}
 
 void ArrayOfFractions::print()const {
 	cout<< "[";
