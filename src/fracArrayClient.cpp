@@ -1,5 +1,6 @@
 #include <iostream>
 #include "fracArray.h"
+using namespace std;
  
 int main() {
     ArrayOfFractions L;

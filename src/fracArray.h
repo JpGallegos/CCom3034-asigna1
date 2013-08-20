@@ -12,7 +12,7 @@ class ArrayOfFractions {
 		ArrayOfFractions();
 		~ArrayOfFractions();
 
-		int getSize()const;
+		int getArraySize()const;
 
 		void sortAscending();
 		void print()const;
