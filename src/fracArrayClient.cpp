@@ -9,9 +9,9 @@ int main() {
     L.print();
  
     cout << "Maximo, minimo y suma de elementos en L" << endl;
-    // L.max().print();
-    L.min().print();
-    // L.sum().print(); 
+    L.max().print(); cout<< '\n';
+    L.min().print(); cout<< '\n';
+    L.sum().print(); cout<< '\n';
  
  
     L.sortAscending();

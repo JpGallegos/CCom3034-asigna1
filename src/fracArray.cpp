@@ -5,6 +5,14 @@
 #include <time.h>		// time
 using namespace std;
 
+Fraction minFrac(Fraction a, Fraction b) {
+	return (!a.gt(b)) ? a: b;
+}
+
+Fraction maxFrac(Fraction a, Fraction b) {
+	return (a.gt(b)) ? a: b;
+}
+
 ArrayOfFractions::ArrayOfFractions() {
 
 	srand(time(NULL));
@@ -55,10 +63,32 @@ void ArrayOfFractions::print()const {
 }
 
 Fraction ArrayOfFractions::min()const {
-	// Do something
+	Fraction leastFrac = A[0];
+
+	for (int idx=1; idx<frac_count; idx++) {
+		leastFrac = minFrac(leastFrac, A[idx]);
+	}
+
+	return leastFrac;
 }
 
-Fraction ArrayOfFractions::max()const {}
+Fraction ArrayOfFractions::max()const {
+	Fraction greatestFrac = A[0];
 
-Fraction ArrayOfFractions::sum()const {}
+	for (int idx=1; idx<frac_count; idx++) {
+		greatestFrac = maxFrac(greatestFrac, A[idx]);
+	}
+
+	return greatestFrac;
+}
+
+Fraction ArrayOfFractions::sum()const {
+	Fraction fracSum = A[0];
+
+	for (int idx=1; idx<frac_count; idx++) {
+		fracSum = fracSum.add(A[idx]);
+	}
+
+	return fracSum;
+}
 
