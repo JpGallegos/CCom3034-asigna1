@@ -114,11 +114,13 @@ Fraction Fraction::div(const Fraction& F)const {
 	return result;
 }
 
-bool     Fraction::gt(const Fraction& F)const {
+bool Fraction::gt(const Fraction& F)const {
 	int LCM = lcm(denom, F.getDenom());
-	// cout<< "With denominators: "<< denom<< " and "<<  F.getDenom()<<'\n';
-	// cout<< "The lcm is: "<< LCM<< '\n';
-	// cout<< "Comparing: "<< (num * (LCM/denom))<< " and "<<  (F.getNum() * (LCM/F.getDenom()))<<'\n';
+	return ((num * (LCM/denom)) > (F.getNum() * (LCM/F.getDenom())));
+}
+
+bool Fraction::lt(const Fraction& F)const {
+	int LCM = lcm(denom, F.getDenom());
 	return ((num * (LCM/denom)) > (F.getNum() * (LCM/F.getDenom())));
 }
 

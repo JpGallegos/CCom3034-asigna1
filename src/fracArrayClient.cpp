@@ -8,9 +8,9 @@ int main() {
     cout << "Contenido de L:" << endl;
     L.print();
  
-    // cout << "Maximo, minimo y suma de elementos en L" << endl;
+    cout << "Maximo, minimo y suma de elementos en L" << endl;
     // L.max().print();
-    // L.min().print();
+    L.min().print();
     // L.sum().print(); 
  
  

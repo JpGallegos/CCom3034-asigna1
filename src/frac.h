@@ -22,6 +22,7 @@ class Fraction {
 		Fraction mult(const Fraction& F) const;
 		Fraction div(const Fraction& F) const;
 		bool     gt(const Fraction& F) const;
+		bool     lt(const Fraction& F) const;
 		void     reduce();
 };
 

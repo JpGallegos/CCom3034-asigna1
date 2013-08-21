@@ -12,9 +12,7 @@ ArrayOfFractions::ArrayOfFractions() {
 
 	for(int idx=0; idx<ARRAY_SIZE; idx++) {
 		A[idx] = Fraction(rand() % 15 + 1, rand() % 15 + 1);
-		// A[idx].print(); cout<<"\n";
 		A[idx].reduce();
-		// A[idx].print(); cout<< "\n ----- \n";
 		frac_count++;
 	}
 
@@ -56,7 +54,9 @@ void ArrayOfFractions::print()const {
 	cout<<"]\n";
 }
 
-Fraction ArrayOfFractions::min()const {}
+Fraction ArrayOfFractions::min()const {
+	// Do something
+}
 
 Fraction ArrayOfFractions::max()const {}
 
