@@ -86,7 +86,10 @@ Fraction ArrayOfFractions::sum()const {
 	Fraction fracSum = A[0];
 
 	for (int idx=1; idx<frac_count; idx++) {
+		fracSum.print(); cout<< " + "; A[idx].print(); cout<< " = ";
 		fracSum = fracSum.add(A[idx]);
+		fracSum.print();
+		cout<< "\n";
 	}
 
 	return fracSum;
